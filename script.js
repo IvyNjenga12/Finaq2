@@ -1,4 +1,4 @@
-// script.js
+
 document.getElementById('add-course').addEventListener('click', function() {
     const courseRow = document.createElement('div');
     courseRow.className = 'course-row';
@@ -17,21 +17,26 @@ document.getElementById('add-course').addEventListener('click', function() {
 });
 
 document.getElementById('calculate-gpa').addEventListener('click', function() {
+    const courseNames = document.querySelectorAll('input[name="course-name"]');
     const grades = document.querySelectorAll('select[name="grade"]');
     let totalPoints = 0;
     let numCourses = 0;
+    let confirmationMessage = "Courses and Grades:\n";
 
-    grades.forEach(function(grade) {
+    grades.forEach(function(grade, index) {
         if (grade.value !== "") {
             totalPoints += parseFloat(grade.value);
             numCourses++;
+            confirmationMessage += `${courseNames[index].value}: ${grade.options[grade.selectedIndex].text}\n`;
         }
     });
 
     if (numCourses > 0) {
         const gpa = totalPoints / numCourses;
+        document.getElementById('confirmation-box').textContent = confirmationMessage;
         document.getElementById('gpa-result').textContent = `Your GPA is: ${gpa.toFixed(2)}`;
     } else {
-        document.getElementById('gpa-result').textContent = "Please enter grades for all courses.";
+        document.getElementById('confirmation-box').textContent = "Please enter grades for all courses.";
+        document.getElementById('gpa-result').textContent = "";
     }
 });
