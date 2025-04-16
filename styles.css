@@ -1,0 +1,51 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    padding: 2rem;
+}
+
+.course-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.course-row input, .course-row select {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#gpa-result {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    color: #333;
+}
