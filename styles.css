@@ -4,6 +4,9 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 header {
@@ -15,6 +18,9 @@ header {
 
 main {
     padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .course-row {
@@ -44,8 +50,18 @@ button:hover {
     background-color: #0056b3;
 }
 
-#gpa-result {
+#confirmation-box, #gpa-result {
     margin-top: 2rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    text-align: center;
+}
+
+#gpa-result {
     font-size: 1.5rem;
     color: #333;
 }
